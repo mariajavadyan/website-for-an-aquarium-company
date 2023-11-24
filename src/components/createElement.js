@@ -1,14 +1,33 @@
-export function createElement({ tag, content, placeholder, id }) {
-  const element = document.createElement(tag);
-  element.textContent = content;
-  if (placeholder) {
-    element.setAttribute("placeholder", placeholder);
-  }
+export function createElement({ tag, content, placeholder, id, src, className, href, alt }) {
+    const element = document.createElement(tag);
 
-  if (id) {
-    element.setAttribute("id", id);
-  }
-  
+    if (content) {
+        element.textContent = content;
+    }
+    if (placeholder) {
+        element.setAttribute("placeholder", placeholder);
+    }
 
-  return element;
+    if (id) {
+        element.setAttribute("id", id);
+    }
+
+    if (src) {
+        element.setAttribute("src", src);
+    }
+
+    if (className) {
+        element.setAttribute("class", className);
+    }
+
+    if (href) {
+        element.setAttribute("href", href);
+    }
+
+    if (alt) {
+        element.setAttribute("alt", alt);
+    }
+
+
+    return element;
 }
