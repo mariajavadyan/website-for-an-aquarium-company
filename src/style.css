@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
 }
@@ -161,4 +161,16 @@ ul.socIconsContainer {
     width: 20px;
     height: 20px;
     object-fit: cover;
+} */
+
+.header_red {
+    color: red;
+}
+
+.main_red {
+    color: red;
+}
+
+.footer_red {
+    color: red;
 }
