@@ -115,9 +115,9 @@ nav ul li a.active {
     font-family: 'Raleway400';
     line-height: 41.36px;
     text-align: justify;
-}
+}*/
 
-footer {
+.footer_container {
     color: #ffffff;
     display: flex;
     flex-wrap: wrap;
@@ -127,50 +127,38 @@ footer {
     padding: 43px 291px;
 }
 
-footer div {
+.footer_container div {
     margin-bottom: 17px;
     font-size: 15px;
     font-family: 'Raleway400';
     text-align: left;
 }
 
-.mt17 {
+.footer_mt17 {
     margin-top: 17px;
 }
 
-.w50 {
+.footer_w50 {
     width: 50%;
 }
 
-.w50 div {
+.footer_w50 div {
     text-align: center;
 }
 
-.mb-0 {
+.footer_mb-0 {
     margin-bottom: 0;
 }
 
-ul.socIconsContainer {
+ul.footer_socIconsContainer {
     margin-top: 51px;
     display: flex;
     list-style-type: none;
     padding: 0;
 }
 
-.socIcons {
+.footer_socIcons {
     width: 20px;
     height: 20px;
     object-fit: cover;
-} */
-
-.header_red {
-    color: red;
-}
-
-.main_red {
-    color: red;
-}
-
-.footer_red {
-    color: red;
 }
