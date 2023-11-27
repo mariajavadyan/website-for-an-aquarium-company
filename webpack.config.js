@@ -30,12 +30,18 @@ module.exports = {
                 use: ["style-loader", "css-loader", "postcss-loader"]
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
-                type: 'asset/resource'
+                test: /\.(webp|png|jpe?g|gif)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name][ext]'
+                }
             },
             {
-              test: /\.(woff|woff2|eot|ttf|otf)$/i,
-              type: 'asset/resource',
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext]'
+                }
             },
             {
                 test: /\.m?js$/,
