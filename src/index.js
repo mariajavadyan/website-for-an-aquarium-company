@@ -1,7 +1,7 @@
 // import createHeader from "./components/Header";
 // import createMain from "./components/Main";
-import createFooter from "./components/Footer";
-import "@/style.css";
+import createFooter from "./components/FooterContent/Footer/Footer.component";
+// import "@/style.css";
 
 const rootElement = document.getElementById("root");
 // const headerElement = createHeader();

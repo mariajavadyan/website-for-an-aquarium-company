@@ -1,3 +1,5 @@
+import commonStyles from "../CommonStyles.css";
+
 function createAddress() {
     let addressContainerElement = document.createElement("div");
     let addressElement = document.createElement("div");
@@ -6,15 +8,19 @@ function createAddress() {
     let emptyElement = document.createElement("div");
 
     addressElement.textContent = "Address";
+    addressContainerElement.setAttribute("class", commonStyles["container-elem"]);
     addressContainerElement.append(addressElement);
+
     cityElement.textContent = "Yerevan Armenia";
     addressContainerElement.append(cityElement);
-    streetElement.setAttribute("class", "footer_mb-0");
-    streetElement.textContent = "Aram street";
-    addressContainerElement.append(streetElement);
-    emptyElement.setAttribute("class", "footer_mb-0");
-    addressContainerElement.append(emptyElement);
 
+    streetElement.setAttribute("class", commonStyles["mb-0"]);
+    streetElement.textContent = "Aram street";
+
+    addressContainerElement.append(streetElement);
+    emptyElement.setAttribute("class", commonStyles["mb-0"]);
+
+    addressContainerElement.append(emptyElement);
 
     return addressContainerElement;
 }
