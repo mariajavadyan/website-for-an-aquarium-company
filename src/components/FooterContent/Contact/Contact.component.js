@@ -14,11 +14,11 @@ function createContact() {
     contactElement.textContent = "Contact";
     contactContainerElement.append(contactElement);
     mailElement.textContent = "aquadreamspace.com";
+    mailElement.setAttribute("class", commonStyles["mt-17"]);
     contactContainerElement.append(mailElement);
-    emptyElement.setAttribute("class", styles["mt-17"]);
     contactContainerElement.append(emptyElement);
     telElement.textContent = "123-456-7890";
-    telElement.setAttribute("class", commonStyles["mb-0"]);
+    telElement.classList.add(commonStyles["mb-0"], commonStyles["mt-17"]);
     contactContainerElement.append(telElement);
 
 

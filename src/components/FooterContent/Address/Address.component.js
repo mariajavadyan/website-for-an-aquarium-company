@@ -8,15 +8,15 @@ function createAddress() {
   let emptyElement = document.createElement("div");
 
   addressElement.textContent = "Address";
-  addressElement.setAttribute("class", commonStyles["mt-17"]);
 
   addressContainerElement.setAttribute("class", commonStyles["container-elem"]);
   addressContainerElement.append(addressElement);
 
   cityElement.textContent = "Yerevan Armenia";
+  cityElement.setAttribute("class", commonStyles["mt-17"]);
   addressContainerElement.append(cityElement);
 
-  streetElement.setAttribute("class", commonStyles["mb-0"]);
+  streetElement.classList.add(commonStyles["mb-0"], commonStyles["mt-17"]);
   streetElement.textContent = "Aram street";
 
   addressContainerElement.append(streetElement);
