@@ -1,12 +1,12 @@
-// import createHeader from "./components/Header";
-// import createMain from "./components/Main";
+import createHeader from "./components/HeaderContent/Header.component";
+import createMain from "./components/MainContent/Main.component";
 import createFooter from "./components/FooterContent/Footer/Footer.component";
 // import "@/style.css";
 
 const rootElement = document.getElementById("root");
-// const headerElement = createHeader();
-// const mainElement = createMain();
+const headerElement = createHeader();
+const mainElement = createMain();
 
-// rootElement.append(headerElement);
-// rootElement.append(mainElement);
+rootElement.append(headerElement);
+rootElement.append(mainElement);
 rootElement.append(createFooter());
