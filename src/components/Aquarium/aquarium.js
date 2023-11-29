@@ -33,15 +33,16 @@ function move() {
     fish.style.paddingLeft = `${destination.x}px`;
   }
 }
+
 function flip() {
-  if (flipped === false) {
+  if (!flipped) {
     flipped = true;
     fish.style.transform = "scale(-1,1)";
-  } else if (flipped) {
+  } else {
     flipped = false;
     fish.style.transform = "scale(1,1)";
   }
 }
 
 move();
-setInterval(move, 5000);
+setInterval(move, 4000);
