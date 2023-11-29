@@ -1,3 +1,6 @@
+import styles from "./Contact.module.css";
+import commonStyles from "../CommonStyles.css";
+
 function createContact() {
     let contactContainerElement = document.createElement("div");
     let contactElement = document.createElement("div");
@@ -5,17 +8,17 @@ function createContact() {
     let emptyElement = document.createElement("div");
     let telElement = document.createElement("div");
 
-    contactContainerElement.setAttribute("class", "footer_w50");
+    contactContainerElement.classList.add(styles["w-50"], commonStyles["container-elem"]);
 
 
     contactElement.textContent = "Contact";
     contactContainerElement.append(contactElement);
     mailElement.textContent = "aquadreamspace.com";
+    mailElement.setAttribute("class", commonStyles["mt-17"]);
     contactContainerElement.append(mailElement);
-    emptyElement.setAttribute("class", "footer_mt17");
     contactContainerElement.append(emptyElement);
     telElement.textContent = "123-456-7890";
-    telElement.setAttribute("class", "footer_mb-0");
+    telElement.classList.add(commonStyles["mb-0"], commonStyles["mt-17"]);
     contactContainerElement.append(telElement);
 
 

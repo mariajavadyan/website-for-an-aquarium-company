@@ -11,7 +11,6 @@ header {
     padding: 0 60px;
     background-color: #000769;
     color: #ffffff;
-    font: normal normal normal 20px/1.79em 'Raleway400', sans-serif;
 }
 
 .logo {
@@ -33,7 +32,6 @@ header {
     margin: 0;
     display: flex;
     align-items: flex-end;
-    font: normal normal normal 20px/1.79em 'Raleway700';
 }
 
 nav ul {
@@ -69,7 +67,6 @@ nav ul li a.active {
     height: 83px;
     font-size: 56px;
     margin: 0;
-    font-family: 'Oswald-Medium';
 }
 
 .gameSection {
@@ -79,7 +76,6 @@ nav ul li a.active {
 .game {
     color: white;
     font-size: 46px;
-    font-family: 'Oswald-Medium';
     position: absolute;
     top: 40%;
     left: 50%;
@@ -94,7 +90,6 @@ nav ul li a.active {
 
 .yourAquatic {
     font-size: 50px;
-    font-family: 'Oswald-Medium';
     line-height: normal;
     margin: 0;
     padding: 38px 0 25px 0;
@@ -103,7 +98,6 @@ nav ul li a.active {
 
 .informationAbout {
     font-size: 20px;
-    font-family: 'Raleway400';
     line-height: 34.6px;
     margin-top: 0;
     margin-bottom: 25px;
@@ -112,53 +106,6 @@ nav ul li a.active {
 
 .dreamSpace {
     font-size: 22px;
-    font-family: 'Raleway400';
     line-height: 41.36px;
     text-align: justify;
 }*/
-
-.footer_container {
-    color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #000769;
-    border: 1px solid #261d5e;
-    padding: 43px 291px;
-}
-
-.footer_container div {
-    margin-bottom: 17px;
-    font-size: 15px;
-    font-family: 'Raleway400';
-    text-align: left;
-}
-
-.footer_mt17 {
-    margin-top: 17px;
-}
-
-.footer_w50 {
-    width: 50%;
-}
-
-.footer_w50 div {
-    text-align: center;
-}
-
-.footer_mb-0 {
-    margin-bottom: 0;
-}
-
-ul.footer_socIconsContainer {
-    margin-top: 51px;
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-}
-
-.footer_socIcons {
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-}
