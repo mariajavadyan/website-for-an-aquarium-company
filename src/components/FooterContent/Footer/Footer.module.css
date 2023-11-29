@@ -1,0 +1,10 @@
+.container {
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #000769;
+    border: 1px solid #261d5e;
+    padding: 43px 291px;
+    margin-bottom: 17px;
+}
