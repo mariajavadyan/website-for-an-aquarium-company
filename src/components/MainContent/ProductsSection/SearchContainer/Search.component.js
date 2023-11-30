@@ -17,14 +17,14 @@ function CreateSearch() {
   searchBar.id = "searchBar";
   searchBar.classList.add(styles["searchBar"]);
   searchBar.oninput = function () {
-    let productListContainer = document.querySelector(".product-container");
+    let productListContainer = document.querySelector("#productList");
     productListContainer.innerHTML = "";
 
     const productsToDisplay = displayProducts(searchProducts());
     productsToDisplay.forEach((product) => {
       productListContainer.appendChild(Product(product));
     });
-  }
+  };
 
   searchContainer.appendChild(label);
   searchContainer.appendChild(searchBar);

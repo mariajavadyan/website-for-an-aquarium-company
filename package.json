@@ -31,7 +31,8 @@
     "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.89.0",
     "webpack-bundle-analyzer": "^4.10.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "browserslist": [
     "last 69 versions, not dead, ie >= 11"
@@ -39,7 +40,6 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "webpack-dev-server": "^4.15.1"
+    "@fortawesome/free-solid-svg-icons": "^6.4.2"
   }
 }
