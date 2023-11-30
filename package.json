@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "serve": "webpack serve",
     "build": "webpack-cli build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,7 +31,8 @@
     "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.89.0",
     "webpack-bundle-analyzer": "^4.10.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "browserslist": [
     "last 69 versions, not dead, ie >= 11"

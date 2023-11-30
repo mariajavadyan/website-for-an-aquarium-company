@@ -1,5 +1,5 @@
 import styles from "./Contact.module.css";
-import commonStyles from "../CommonStyles.css";
+import commonStyles from "../Footer.module.css";
 
 function createContact() {
     let contactContainerElement = document.createElement("div");

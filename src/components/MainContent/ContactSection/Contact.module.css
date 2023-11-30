@@ -1,0 +1,57 @@
+/*
+
+.gameContainer {
+    background: linear-gradient(to right, #000000e0 0%, #002F5E 10.796875%, #589BE3 90.734375%, #000000e0 100%);
+    background-repeat: no-repeat;
+}
+
+.title {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 83px;
+    font-size: 56px;
+    margin: 0;
+}
+
+.gameSection {
+    position: relative;
+}
+
+.game {
+    color: white;
+    font-size: 46px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.textContent {
+    color: white;
+    background-color: #000769;
+    padding: 0 101px 86px 101px;
+}
+
+.yourAquatic {
+    font-size: 50px;
+    line-height: normal;
+    margin: 0;
+    padding: 38px 0 25px 0;
+    text-align: center;
+}
+
+.informationAbout {
+    font-size: 20px;
+    line-height: 34.6px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.dreamSpace {
+    font-size: 22px;
+    line-height: 41.36px;
+    text-align: justify;
+}*/
