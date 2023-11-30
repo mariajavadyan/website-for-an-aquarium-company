@@ -1,5 +1,5 @@
 import { socialMedia } from "@/content/socialMedia";
-import commonStyles from "../CommonStyles.css";
+import commonStyles from "../Footer.module.css";
 import styles from "./Follow.module.css";
 
 function createFollow() {

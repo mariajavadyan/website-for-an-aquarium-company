@@ -1,0 +1,11 @@
+.searchContainer {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#000769;
+}
+
+.searchBar {
+    padding: 5px;
+    font-size: 16px;
+    width: 300px;
+}

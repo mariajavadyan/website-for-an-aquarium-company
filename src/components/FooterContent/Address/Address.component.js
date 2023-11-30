@@ -1,4 +1,4 @@
-import commonStyles from "../CommonStyles.css";
+import commonStyles from "../Footer.module.css";
 
 function createAddress() {
   let addressContainerElement = document.createElement("div");
