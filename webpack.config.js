@@ -64,6 +64,13 @@ module.exports = {
         }),
         // new BundleAnalyzerPlugin()
     ],
+    devServer: {
+        static: {
+          directory: path.join(__dirname, 'public'),
+        },
+        compress: true,
+        port: 9000,
+    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src/'),

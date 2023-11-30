@@ -1,6 +1,6 @@
-import createFollow from "../Follow/Follow.component";
-import createContact from "../Contact/Contact.component";
-import createAddress from "../Address/Address.component";
+import createFollow from "./Follow/Follow.component";
+import createContact from "./Contact/Contact.component";
+import createAddress from "./Address/Address.component";
 import styles from "./Footer.module.css";
 
 function createFooter() {

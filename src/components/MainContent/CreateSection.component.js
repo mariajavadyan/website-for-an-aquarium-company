@@ -1,14 +1,18 @@
-function CreateSection(id, title, content, isShowContent = false) {
+import styles from "./Main.module.css";
+
+function CreateSection({id, title, content}) {
   const section = document.createElement("section");
-  section.id = id;
-  if (isShowContent) {
-    section.classList.add("show-content");
-  }
-
   const h2 = document.createElement("h2");
-  h2.textContent = title;
-
   const p = document.createElement("p");
+
+  section.id = id;
+
+  if(id !== "home") {
+    section.classList.add(styles["hide-content"]);
+  }
+  section.classList.add(styles[id]);
+
+  h2.textContent = title;
   p.textContent = content;
 
   section.appendChild(h2);

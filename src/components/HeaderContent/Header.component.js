@@ -1,4 +1,4 @@
-import ToggleSection from "@/components/ToggleSection.component";
+import toggleSection from "@/helpers/toggleSection";
 import styles from "./Header.module.css";
 import srcFish from "@/static/images/fish.png";
 
@@ -28,9 +28,10 @@ function createHeader() {
   ["Home", "Products", "About", "Contact"].forEach((text) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
+    a.id = text;
     a.href = `#${text.toLowerCase()}`;
     a.textContent = text;
-    a.onclick = () => ToggleSection(text.toLowerCase());
+    a.onclick = () => toggleSection(text.toLowerCase());
     li.appendChild(a);
     ul.appendChild(li);
   });

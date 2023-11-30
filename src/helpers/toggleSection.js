@@ -1,6 +1,4 @@
-import DisplayProducts from "./DisplayProducts.component";
-
-function ToggleSection(sectionId) {
+function toggleSection(sectionId) {
   let allSections = document.querySelectorAll("section");
 
   allSections.forEach(function (section) {
@@ -9,10 +7,6 @@ function ToggleSection(sectionId) {
 
   let selectedSection = document.getElementById(sectionId);
   selectedSection.style.display = "block";
-
-  if (sectionId === "products") {
-    DisplayProducts();
-  }
 }
 
-export default ToggleSection;
+export default toggleSection;
