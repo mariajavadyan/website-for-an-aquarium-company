@@ -7,6 +7,9 @@
     border: 1px solid #261d5e;
     padding: 43px 291px;
     margin-bottom: 17px;
+    position: relative;
+    bottom: 0;
+    width: 70%;
 }
 
 .mt-17 {
