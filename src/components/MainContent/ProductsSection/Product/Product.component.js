@@ -6,7 +6,7 @@ import ProductPrice from "./ProductPrice.component";
 import AddToCartButton from "./AddToCartButton.component";
 import styles from "./Product.module.css";
 
-function Product({image, name, price, description}) {
+function Product({ image, name, price, description }) {
   const productDiv = document.createElement("div");
   productDiv.classList.add(styles["product-item"]);
 
