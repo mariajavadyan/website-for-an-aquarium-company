@@ -1,5 +1,6 @@
 import emailjs from "emailjs-com";
 import styles from "./Contact.module.css";
+import sendEmail from "../../../helpers/sendEmail";
 import createInputElement from "../../../helpers/createInputElement";
 
 function CreateContact() {
@@ -92,17 +93,6 @@ function CreateContact() {
       messageTextarea.value = "";
     }
   });
-
-  function sendEmail() {
-    var params = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    };
-    emailjs.send("service_0i4h0pk", "template_cdoya2p", params, "MQtLIIqwQH_67LOBO").then(function(res) {
-      alert('Success! ' + res.status)
-    });
-  }
 
   return form;
 }
