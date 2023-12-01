@@ -10,7 +10,6 @@ function createHeader() {
 
   const logoImg = document.createElement("img");
   logoImg.setAttribute("src", srcFish);
-  //   logoImg.src = "fish.png";
   logoImg.alt = "Aqua Dream Space logo";
 
   const logoHeading = document.createElement("h1");

@@ -12,6 +12,7 @@ function createMain() {
   const main = document.createElement("main");
 
   const homeSection = document.createElement("section");
+  homeSection.setAttribute("id", "home");
   const productsSection = CreateSection({
     id: "products",
     title: "Products",
@@ -27,16 +28,12 @@ function createMain() {
     content: "Have questions or inquiries? Reach out to us using the contact information provided below."
   });
 
-  if(CreateInfo()) {
-    homeSection.appendChild(CreateGame());
-    homeSection.appendChild(CreateInfo());
-  }
+  homeSection.appendChild(CreateGame());
+  homeSection.appendChild(CreateInfo());
   productsSection.appendChild(CreateSearch());
   productsSection.appendChild(CreateListContainer());
   aboutSection.appendChild(CreateAbout());
-  if(CreateContact()) {
-    contactSection.appendChild(CreateContact());
-  }
+  contactSection.appendChild(CreateContact());
 
   main.appendChild(homeSection);
   main.appendChild(productsSection);
