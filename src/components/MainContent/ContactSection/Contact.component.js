@@ -1,5 +1,6 @@
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 import styles from "./Contact.module.css";
+import createInputElement from "../../../helpers/createInputElement";
 
 function CreateContact() {
   const form = document.createElement("form");
@@ -9,34 +10,35 @@ function CreateContact() {
   heading.textContent = "Contact Us";
   form.appendChild(heading);
 
-  const nameLabel = document.createElement("label");
-  nameLabel.textContent = "Name";
-  const nameInput = document.createElement("input");
-  nameInput.setAttribute("type", "text");
-  nameInput.setAttribute("id", "name");
-  nameInput.setAttribute("name", "name");
-  nameInput.setAttribute("required", "true");
-  nameLabel.appendChild(nameInput);
-  form.appendChild(nameLabel);
-
-  const emailLabel = document.createElement("label");
-  emailLabel.textContent = "Email";
-  const emailInput = document.createElement("input");
-  emailInput.setAttribute("type", "email");
-  emailInput.setAttribute("id", "email");
-  emailInput.setAttribute("name", "email");
-  emailInput.setAttribute("required", "true");
-  emailLabel.appendChild(emailInput);
-  form.appendChild(emailLabel);
-
-  const messageLabel = document.createElement("label");
-  messageLabel.textContent = "Message";
-  const messageTextarea = document.createElement("textarea");
-  messageTextarea.setAttribute("id", "message");
-  messageTextarea.setAttribute("name", "message");
-  messageTextarea.setAttribute("required", "true");
-  messageLabel.appendChild(messageTextarea);
-  form.appendChild(messageLabel);
+  form.appendChild(
+    createInputElement({
+      tag: "input",
+      type: "text",
+      id: "name",
+      name: "name",
+      labelText: "Name",
+      required: true,
+    })
+  );
+  form.appendChild(
+    createInputElement({
+      tag: "input",
+      type: "email",
+      id: "email",
+      name: "email",
+      labelText: "Email",
+      required: true,
+    })
+  );
+  form.appendChild(
+    createInputElement({
+      tag: "textarea",
+      id: "message",
+      name: "message",
+      labelText: "Message",
+      required: true,
+    })
+  );
 
   const submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
@@ -54,7 +56,6 @@ function CreateContact() {
   successMessage.style.color = "green";
   successMessage.textContent = "Message sent successfully!";
   form.appendChild(successMessage);
-
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
