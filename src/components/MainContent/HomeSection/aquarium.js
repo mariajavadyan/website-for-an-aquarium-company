@@ -27,7 +27,8 @@ function move() {
     (destination.x < currentPosition.x && !flipped) ||
     (destination.x > currentPosition.x && flipped)
   ) {
-    flip();
+    clearInterval(motionIntervalId);
+    const flipIntervalId = setInterval(flip(), 1000);
   } else {
     fish.style.paddingTop = `${destination.y}px`;
     fish.style.paddingLeft = `${destination.x}px`;
@@ -36,13 +37,13 @@ function move() {
 
 function flip() {
   if (!flipped) {
-    flipped = true;
     fish.style.transform = "scale(-1,1)";
   } else {
-    flipped = false;
     fish.style.transform = "scale(1,1)";
   }
+  flipped = !flipped;
+  motionIntervalId = setInterval(move, 4000);
 }
 
 move();
-setInterval(move, 4000);
+const motionIntervalId = setInterval(move, 4000);
