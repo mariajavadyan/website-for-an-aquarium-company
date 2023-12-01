@@ -15,8 +15,21 @@ function CreateContact() {
       name: "name",
       required: true,
       labelText: "Name",
+      placeholder: "Ann",
     }
   );
+
+  const { label: phoneInputLabel, inputElement: phoneInput } =
+    createInputElement({
+      id: "phone",
+      type: "tel",
+      tag: "input",
+      name: "phone",
+      required: true,
+      labelText: "Phone",
+      pattern: "+374[0-9]{8}",
+      placeholder: "+37498991133",
+    });
 
   const { label: emailInputLabel, inputElement: emailInput } =
     createInputElement({
@@ -26,6 +39,7 @@ function CreateContact() {
       name: "email",
       required: true,
       labelText: "Email",
+      placeholder: "smith@gmail.com",
     });
 
   const { label: messageTextareaLabel, inputElement: messageTextarea } =
@@ -35,9 +49,11 @@ function CreateContact() {
       tag: "textarea",
       name: "message",
       labelText: "Message",
+      placeholder: "Hello, ...",
     });
 
   form.appendChild(nameInputLabel);
+  form.appendChild(phoneInputLabel);
   form.appendChild(emailInputLabel);
   form.appendChild(messageTextareaLabel);
 
@@ -48,7 +64,7 @@ function CreateContact() {
 
   const errorMessages = document.createElement("p");
   errorMessages.setAttribute("id", "errorMessages");
-  errorMessages.classList.add("error");
+  errorMessages.style.color = "red";
   form.appendChild(errorMessages);
 
   const successMessage = document.createElement("p");
@@ -61,14 +77,21 @@ function CreateContact() {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    let name = nameInput.value;
-    let email = emailInput.value;
-    let message = messageTextarea.value;
+    const name = nameInput.value;
+    const phone = phoneInput.value;
+    const email = emailInput.value;
+    const message = messageTextarea.value;
 
     let errorMessagesText = "";
 
-    if (!name || !email || !message) {
+    if (!name || !phone || !email || !message) {
       errorMessagesText += "Please fill in all fields.<br>";
+    }
+
+    const phoneRegex = /^\+374[0-9]{8}$/;
+    if (!phoneRegex.test(phone)) {
+      errorMessagesText +=
+        "Please enter a valid phone number in the format +374 ########.<br>";
     }
 
     const emailRegex = /^\S+@\S+\.\S+$/;
@@ -88,9 +111,12 @@ function CreateContact() {
 
       successDisplay.style.display = "block";
 
-      name = "";
-      email = "";
-      message = "";
+      nameInput.value = "";
+      phoneInput.value = "";
+      emailInput.value = "";
+      messageTextarea.value = "";
+
+      setTimeout(() => (successDisplay.style.display = "none"), 3000);
     }
   });
 
