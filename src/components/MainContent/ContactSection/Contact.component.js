@@ -7,39 +7,39 @@ function CreateContact() {
   const form = document.createElement("form");
   form.setAttribute("id", "contactForm");
 
-  const heading = document.createElement("h2");
-  heading.textContent = "Contact Us";
-  form.appendChild(heading);
-
-  form.appendChild(
-    createInputElement({
+  const { label: nameInputLabel, inputElement: nameInput } = createInputElement(
+    {
+      id: "name",
       tag: "input",
       type: "text",
-      id: "name",
       name: "name",
-      labelText: "Name",
       required: true,
-    })
+      labelText: "Name",
+    }
   );
-  form.appendChild(
+
+  const { label: emailInputLabel, inputElement: emailInput } =
     createInputElement({
+      id: "email",
       tag: "input",
       type: "email",
-      id: "email",
       name: "email",
-      labelText: "Email",
       required: true,
-    })
-  );
-  form.appendChild(
+      labelText: "Email",
+    });
+
+  const { label: messageTextareaLabel, inputElement: messageTextarea } =
     createInputElement({
-      tag: "textarea",
       id: "message",
+      required: true,
+      tag: "textarea",
       name: "message",
       labelText: "Message",
-      required: true,
-    })
-  );
+    });
+
+  form.appendChild(nameInputLabel);
+  form.appendChild(emailInputLabel);
+  form.appendChild(messageTextareaLabel);
 
   const submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
@@ -61,9 +61,9 @@ function CreateContact() {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const name = nameInput.value;
-    const email = emailInput.value;
-    const message = messageTextarea.value;
+    let name = nameInput.value;
+    let email = emailInput.value;
+    let message = messageTextarea.value;
 
     let errorMessagesText = "";
 
@@ -88,9 +88,9 @@ function CreateContact() {
 
       successDisplay.style.display = "block";
 
-      nameInput.value = "";
-      emailInput.value = "";
-      messageTextarea.value = "";
+      name = "";
+      email = "";
+      message = "";
     }
   });
 
