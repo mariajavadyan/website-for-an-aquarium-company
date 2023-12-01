@@ -1,11 +1,15 @@
 import styles from "./Main.module.css";
 
-function CreateSection({ id, title, content }) {
+function CreateSection({ id, title, content, sectionClass }) {
   const section = document.createElement("section");
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
 
   section.id = id;
+
+  if (sectionClass) {
+    section.classList.add(styles[sectionClass]);
+  }
 
   if (id !== "home") {
     section.classList.add(styles["hide-content"]);

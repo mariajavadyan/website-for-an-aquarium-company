@@ -1,57 +1,65 @@
-/*
-
-.gameContainer {
-    background: linear-gradient(to right, #000000e0 0%, #002F5E 10.796875%, #589BE3 90.734375%, #000000e0 100%);
-    background-repeat: no-repeat;
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000769;
 }
 
-.title {
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 83px;
-    font-size: 56px;
-    margin: 0;
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #000769;
+  font-size: 14px;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
 }
 
-.gameSection {
-    position: relative;
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
-.game {
-    color: white;
-    font-size: 46px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+textarea {
+  height: 80px;
 }
 
-.textContent {
-    color: white;
-    background-color: #000769;
-    padding: 0 101px 86px 101px;
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.yourAquatic {
-    font-size: 50px;
-    line-height: normal;
-    margin: 0;
-    padding: 38px 0 25px 0;
-    text-align: center;
+input[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
-.informationAbout {
-    font-size: 20px;
-    line-height: 34.6px;
-    margin-top: 0;
-    margin-bottom: 25px;
-    text-align: center;
+.error {
+  color: red;
+  margin-top: 6px;
+  font-size: 12px;
 }
 
-.dreamSpace {
-    font-size: 22px;
-    line-height: 41.36px;
-    text-align: justify;
-}*/
+#successMessage {
+  color: green;
+  display: none;
+  margin-top: 10px;
+}
