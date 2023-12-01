@@ -3,18 +3,15 @@ import CreateSection from "./CreateSection.component";
 import CreateSearch from "./ProductsSection/SearchContainer/Search.component";
 import CreateListContainer from "./ProductsSection/ListContainer/ListContainer.component";
 
-import CreateHome from "./HomeSection/Home.component";
+import CreateGame from "./HomeSection/Game.component";
+import CreateInfo from "./HomeSection/Info.component";
 import CreateAbout from "./AboutSection/About.component";
 import CreateContact from "./ContactSection/Contact.component";
 
 function createMain() {
   const main = document.createElement("main");
 
-  const homeSection = CreateSection({
-    id: "home",
-    title: "Welcome to My Website",
-    content: "This is the home section of my website."
-  });
+  const homeSection = document.createElement("section");
   const productsSection = CreateSection({
     id: "products",
     title: "Products",
@@ -30,14 +27,13 @@ function createMain() {
     content: "Have questions or inquiries? Reach out to us using the contact information provided below."
   });
 
-  if(CreateHome()) {
-    homeSection.appendChild(CreateHome());
+  if(CreateInfo()) {
+    homeSection.appendChild(CreateGame());
+    homeSection.appendChild(CreateInfo());
   }
   productsSection.appendChild(CreateSearch());
   productsSection.appendChild(CreateListContainer());
-  if(CreateAbout()) {
-    aboutSection.appendChild(CreateAbout());
-  }
+  aboutSection.appendChild(CreateAbout());
   if(CreateContact()) {
     contactSection.appendChild(CreateContact());
   }
