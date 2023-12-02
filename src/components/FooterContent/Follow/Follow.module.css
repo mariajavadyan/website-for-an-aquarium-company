@@ -1,0 +1,13 @@
+.soc-icons-container {
+    margin-top: 51px;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.soc-icons {
+    color: white;
+    background-color: transparent;
+    margin-right: 10px;
+    font-size: 17px;
+}

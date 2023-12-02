@@ -1,0 +1,15 @@
+.searchContainer {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000769;
+    max-width: 300px; 
+    margin: 0 auto;
+}
+
+.searchBar {
+    display: inline-block;
+    padding: 2px; 
+    font-size: 12px; 
+    max-width: 100%; 
+    width: 100%; 
+}

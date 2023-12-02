@@ -1,0 +1,26 @@
+.container {
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #000769;
+    border: 1px solid #261d5e;
+    padding: 43px 291px;
+    margin-bottom: 17px;
+    position: relative;
+    bottom: 0;
+    width: 70%;
+}
+
+.mt-17 {
+    margin-top: 17px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.container-elem {
+    font-size: 15px;
+    text-align: left;
+}
