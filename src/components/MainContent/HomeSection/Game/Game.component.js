@@ -13,8 +13,8 @@ function createGame() {
   gameDivElement.classList.add(styles["gameSection"]);
   titleElement.textContent = "AQUA DREAM SPACE";
 
-  gameDivElement.appendChild(CreateFish());
   gameDivElement.appendChild(CreateFishTank());
+  gameDivElement.appendChild(CreateFish());
 
   gameDiv.appendChild(titleElement);
   gameDiv.appendChild(gameDivElement);
