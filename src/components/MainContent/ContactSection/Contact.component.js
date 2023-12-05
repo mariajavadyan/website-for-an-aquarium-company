@@ -1,122 +1,93 @@
-import emailjs from "emailjs-com";
 import styles from "./Contact.module.css";
-import sendEmail from "../../../helpers/sendEmail";
-import createInputElement from "../../../helpers/createInputElement";
+import sendEmail from "@/helpers/sendEmail";
+import { formFields } from "@/content/formFields";
+import createInputElement from "@/helpers/createInputElement";
 
 function CreateContact() {
   const form = document.createElement("form");
-  form.setAttribute("id", "contactForm");
+  form.classList.add(styles["form-container"]);
 
-  const { label: nameInputLabel, inputElement: nameInput } = createInputElement(
-    {
-      id: "name",
-      tag: "input",
-      type: "text",
-      name: "name",
-      required: true,
-      labelText: "Name",
-      placeholder: "Ann",
-    }
-  );
+  formFields.forEach((inputConfig) => {
+    const { label, inputElement } = createInputElement(inputConfig);
+    form.appendChild(label);
+    label.classList.add(styles["form-label"]);
+    inputElement.classList.add(styles[`form-${inputConfig.tag}`]);
+  });
 
-  const { label: phoneInputLabel, inputElement: phoneInput } =
-    createInputElement({
-      id: "phone",
-      type: "tel",
-      tag: "input",
-      name: "phone",
-      required: true,
-      labelText: "Phone",
-      pattern: "+374[0-9]{8}",
-      placeholder: "+37498991133",
-    });
-
-  const { label: emailInputLabel, inputElement: emailInput } =
-    createInputElement({
-      id: "email",
-      tag: "input",
-      type: "email",
-      name: "email",
-      required: true,
-      labelText: "Email",
-      placeholder: "smith@gmail.com",
-    });
-
-  const { label: messageTextareaLabel, inputElement: messageTextarea } =
-    createInputElement({
-      id: "message",
-      required: true,
-      tag: "textarea",
-      name: "message",
-      labelText: "Message",
-      placeholder: "Hello, ...",
-    });
-
-  form.appendChild(nameInputLabel);
-  form.appendChild(phoneInputLabel);
-  form.appendChild(emailInputLabel);
-  form.appendChild(messageTextareaLabel);
-
-  const submitButton = document.createElement("input");
-  submitButton.setAttribute("type", "submit");
-  submitButton.setAttribute("value", "Submit");
+  const submitButton = document.createElement("button");
+  submitButton.innerHTML = "Submit";
+  submitButton.classList.add(styles["form-submit"]);
   form.appendChild(submitButton);
 
   const errorMessages = document.createElement("p");
-  errorMessages.setAttribute("id", "errorMessages");
-  errorMessages.style.color = "red";
+  errorMessages.classList.add(styles["error-messages"]);
+  errorMessages.style.display = "none";
   form.appendChild(errorMessages);
 
   const successMessage = document.createElement("p");
-  successMessage.setAttribute("id", "successMessage");
-  successMessage.style.display = "none";
-  successMessage.style.color = "green";
+  successMessage.classList.add(styles["success-message"]);
   successMessage.textContent = "Message sent successfully!";
+  successMessage.style.display = "none";
   form.appendChild(successMessage);
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const name = nameInput.value;
-    const phone = phoneInput.value;
-    const email = emailInput.value;
-    const message = messageTextarea.value;
+    const formInputs = form.querySelectorAll("input, textarea");
 
     let errorMessagesText = "";
 
-    if (!name || !phone || !email || !message) {
-      errorMessagesText += "Please fill in all fields.<br>";
-    }
+    formInputs.forEach((input) => {
+      const inputValue = input.value;
 
-    const phoneRegex = /^\+374[0-9]{8}$/;
-    if (!phoneRegex.test(phone)) {
-      errorMessagesText +=
-        "Please enter a valid phone number in the format +374 ########.<br>";
-    }
+      if (!inputValue && input.getAttribute("required") !== null) {
+        errorMessagesText += `Please fill in ${input.getAttribute(
+          "name"
+        )} field.<br>`;
+        return;
+      }
 
-    const emailRegex = /^\S+@\S+\.\S+$/;
-    if (!emailRegex.test(email)) {
-      errorMessagesText += "Please enter a valid email address.<br>";
-    }
+      if (input.getAttribute("type") === "tel" && inputValue) {
+        const phoneRegex = /^\+374[0-9]{8}$/;
 
-    const errorDisplay = document.getElementById("errorMessages");
-    const successDisplay = document.getElementById("successMessage");
+        if (!phoneRegex.test(inputValue)) {
+          errorMessagesText += `Please enter a valid phone number in the format +374 ######## for ${input.getAttribute(
+            "name"
+          )}.<br>`;
+          errorMessages.style.display = "block";
+          return;
+        }
+      }
+
+      if (input.getAttribute("type") === "email" && inputValue) {
+        const emailRegex = /^\S+@\S+\.\S+$/;
+
+        if (!emailRegex.test(inputValue)) {
+          errorMessagesText += `Please enter a valid email address for ${input.getAttribute(
+            "name"
+          )}.<br>`;
+          errorMessages.style.display = "block";
+          return;
+        }
+      }
+    });
 
     if (errorMessagesText) {
-      errorDisplay.innerHTML = errorMessagesText;
+      errorMessages.innerHTML = errorMessagesText;
+      form.appendChild(errorMessages);
     } else {
-      errorDisplay.innerHTML = "";
-
       sendEmail();
+      errorMessages.style.display = "none";
+      successMessage.style.display = "block";
+      console.log(successMessage);
 
-      successDisplay.style.display = "block";
+      formInputs.forEach((input) => {
+        input.value = "";
+      });
 
-      nameInput.value = "";
-      phoneInput.value = "";
-      emailInput.value = "";
-      messageTextarea.value = "";
-
-      setTimeout(() => (successDisplay.style.display = "none"), 3000);
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 3000);
     }
   });
 
