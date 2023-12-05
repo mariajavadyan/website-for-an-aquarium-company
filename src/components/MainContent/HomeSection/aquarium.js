@@ -1,5 +1,6 @@
 const aquarium = document.getElementById("aquarium");
 const fish = document.getElementById("fish");
+
 let flipped = false;
 let currentPosition = {};
 let destination = {};
@@ -16,7 +17,7 @@ function getCurrentPosition() {
 }
 
 function move() {
-  fish.style.transition = "all 5s ease-in-out allow-discrete";
+  fish.style.transition = "all 4s ease-in-out allow-discrete";
   currentPosition = getCurrentPosition();
   destination = {
     x: Math.ceil(Math.random() * (aquarium.offsetWidth - 313)),
@@ -28,8 +29,10 @@ function move() {
     (destination.x > currentPosition.x && flipped)
   ) {
     clearInterval(motionIntervalId);
+    fish.style.transition = "all 1s ease-in allow-discrete";
     flip();
     setTimeout(() => {
+      fish.style.transition = "all 4s ease-in-out allow-discrete";
       motionIntervalId = setInterval(move, 4000);
     }, 1000);
   } else {
@@ -40,6 +43,7 @@ function move() {
 
 function flip() {
   if (!flipped) {
+    fish.style.paddingLeft = `${destination.x}px`;
     fish.style.transform = "scale(-1,1)";
   } else {
     fish.style.transform = "scale(1,1)";

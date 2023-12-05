@@ -32,32 +32,32 @@ module.exports = {
                     // Lossless optimization with custom option
                     // Feel free to experiment with options for better result for you
                     plugins: [
-                    ["gifsicle", { interlaced: true }],
-                    ["jpegtran", { progressive: true }],
-                    ["optipng", { optimizationLevel: 5 }],
-                    // Svgo configuration here https://github.com/svg/svgo#configuration
-                    [
-                        "svgo",
-                        {
-                        plugins: [
+                        ["gifsicle", { interlaced: true }],
+                        ["jpegtran", { progressive: true }],
+                        ["optipng", { optimizationLevel: 5 }],
+                        // Svgo configuration here https://github.com/svg/svgo#configuration
+                        [
+                            "svgo",
                             {
-                                name: "preset-default",
-                                params: {
-                                    overrides: {
-                                        removeViewBox: false,
-                                        addAttributesToSVGElement: {
-                                            params: {
-                                                attributes: [
-                                                    { xmlns: "http://www.w3.org/2000/svg" },
-                                                ],
+                            plugins: [
+                                {
+                                    name: "preset-default",
+                                    params: {
+                                        overrides: {
+                                            removeViewBox: false,
+                                            addAttributesToSVGElement: {
+                                                params: {
+                                                    attributes: [
+                                                        { xmlns: "http://www.w3.org/2000/svg" },
+                                                    ],
+                                                },
                                             },
                                         },
                                     },
                                 },
+                            ],
                             },
                         ],
-                        },
-                    ],
                     ],
                 },
             },
@@ -80,6 +80,9 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [new CssMinimizerPlugin(), new MiniCssExtractPlugin(), new TerserPlugin()],
+        splitChunks: {
+            chunks: 'all',
+        },
     },
     module: {
         rules: [
@@ -103,13 +106,13 @@ module.exports = {
                 type: 'asset/resource',
                 use: [
                     {
-                      loader: ImageMinimizerPlugin.loader,
-                      options: {
-                        severityError: 'warning', // Ignore errors on corrupted images
-                        minimizerOptions: {
-                          plugins: ['gifsicle'],
+                        loader: ImageMinimizerPlugin.loader,
+                        options: {
+                            severityError: 'warning', // Ignore errors on corrupted images
+                            minimizerOptions: {
+                                plugins: ['gifsicle'],
+                            },
                         },
-                      },
                     },
                 ]
             },
