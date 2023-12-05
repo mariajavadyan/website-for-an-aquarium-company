@@ -1,4 +1,4 @@
-.container {
+/* .container {
     color: #ffffff;
     display: flex;
     flex-wrap: wrap;
@@ -23,4 +23,55 @@
 .container-elem {
     font-size: 15px;
     text-align: left;
+} */
+
+.container {
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #000769;
+    border: 1px solid #261d5e;
+    padding: 20px;
+    margin-bottom: 17px;
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Set to 100% to use the full width */
+}
+
+.mt-17 {
+    margin-top: 17px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.container-elem {
+    font-size: 15px;
+    text-align: left;
+    flex: 1 1 auto; /* Allow elements to grow and shrink */
+    margin: 50px; /* Add some space around elements */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .container-elem {
+        font-size: 15px; /* Reduce font size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically on very small screens */
+    }
+
+    .container-elem {
+        text-align: center; /* Center-align text on very small screens */
+        margin: 5px 0; /* Adjust margin for stacked layout */
+    }
 }

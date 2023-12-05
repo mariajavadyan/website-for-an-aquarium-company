@@ -1,4 +1,4 @@
-header {
+/* header {
     background-color:#000769;
     color: #fff;
     padding: 40px 40px;
@@ -41,4 +41,69 @@ nav a {
 
 nav a:hover {
     color: orange;
+} */
+
+header {
+    background-color: #000769;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    margin-left: 120px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo, nav ul {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    nav li {
+        margin-left: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
 }
