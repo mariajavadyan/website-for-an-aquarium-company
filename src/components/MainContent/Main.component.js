@@ -3,7 +3,7 @@ import CreateSection from "./CreateSection.component";
 import CreateSearch from "./ProductsSection/SearchContainer/Search.component";
 import CreateListContainer from "./ProductsSection/ListContainer/ListContainer.component";
 
-import CreateGame from "./HomeSection/Game.component";
+import CreateGame from "./HomeSection/Game/Game.component";
 import CreateInfo from "./HomeSection/Info.component";
 import CreateAbout from "./AboutSection/About.component";
 import CreateContact from "./ContactSection/Contact.component";
