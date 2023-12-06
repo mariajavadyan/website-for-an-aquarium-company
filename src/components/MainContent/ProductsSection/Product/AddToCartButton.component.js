@@ -5,7 +5,7 @@ function AddToCartButton() {
   addToCartButton.textContent = "Add to Cart";
   addToCartButton.classList.add(styles["add-to-cart-btn"]);
   // addToCartButton.addEventListener("click", function () {
-  //   addToCart(product.price);
+  //   AddToCartButton(product.price);
   // });
 
   return addToCartButton;

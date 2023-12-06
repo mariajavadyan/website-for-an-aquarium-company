@@ -1,10 +1,10 @@
-.hide-content {
+/* .hide-content {
     display: none;
 }
 
 section {
     /* padding: 20px; */
-    text-align: center;
+    /* text-align: center;
 }
 
 .home h2,
@@ -40,4 +40,91 @@ section {
     width: 100%; 
     max-width: 800px; 
     margin-top: -120px;
+} */ 
+
+
+.hide-content {
+    display: none;
+}
+
+section {
+    text-align: center;
+}
+
+.home h2,
+.products h2 {
+    text-align: center;
+    color: #000769;
+    font-size: 40px;
+}
+
+.about h2 {
+    text-align: left;
+    color: rgb(0, 0, 84);
+    font-size: 40px;
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+.about p {
+    width: 30%;
+    box-sizing: border-box;
+    text-align: left;
+    float: left;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+    color: #000769;
+    margin-left: 200px;
+    margin-top: 100px;
+}
+
+.about img {
+    width: 100%;
+    max-width: 800px;
+    margin-top: -120px;
+}
+
+
+@media (max-width: 768px) {
+    .home h2,
+    .products h2,
+    .about h2 {
+        font-size: 30px;
+        margin-left: 20px;
+        margin-top: 40px;
+    }
+
+    .about p {
+        width: 50%;
+        margin-left: 20px;
+        margin-top: 50px;
+    }
+
+    .about img {
+        max-width: 600px;
+        margin-top: -60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home h2,
+    .products h2,
+    .about h2 {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .about p {
+        width: 70%;
+        margin-left: 10px;
+        margin-top: 25px;
+    }
+
+    .about img {
+        max-width: 400px;
+        margin-top: -30px;
+    }
 }
