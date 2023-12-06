@@ -1,6 +1,6 @@
-import displayProducts from "@/helpers/displayProducts";
+import displayProducts from "@/services/displayProducts";
 import Product from "../Product/Product.component";
-import searchProducts from "@/helpers/searchProducts";
+import searchProducts from "@/services/searchProducts";
 import styles from "./Search.module.css";
 
 function CreateSearch() {
@@ -20,9 +20,21 @@ function CreateSearch() {
     let productListContainer = document.querySelector("#productList");
     productListContainer.innerHTML = "";
 
-    const productsToDisplay = displayProducts(searchProducts());
-    productsToDisplay.forEach((product) => {
-      productListContainer.appendChild(Product(product));
+    displayProducts(searchProducts()).then(products => {
+      const searchInput = document.getElementById("searchBar").value.toLowerCase();
+      const filteredProducts = products.filter((product) => {
+        return (
+          product.name.toLowerCase().includes(searchInput) ||
+          product.description.toLowerCase().includes(searchInput)
+        );
+      });
+
+      filteredProducts.forEach(product => {
+        productListContainer.appendChild(Product(product));
+      });
+    })
+    .catch((error) => {
+      console.error('Ошибка при загрузке изображения:', error);
     });
   };
 
