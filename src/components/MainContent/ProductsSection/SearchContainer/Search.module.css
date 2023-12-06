@@ -1,3 +1,20 @@
+/* .searchContainer {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000769;
+    max-width: 300px; 
+    margin: 0 auto;
+}
+
+.searchBar {
+    display: inline-block;
+    padding: 2px; 
+    font-size: 12px; 
+    max-width: 100%; 
+    width: 100%; 
+} */
+
+
 .searchContainer {
     text-align: center;
     margin-bottom: 20px;
@@ -12,4 +29,22 @@
     font-size: 12px; 
     max-width: 100%; 
     width: 100%; 
+}
+
+
+@media (min-width: 768px) {
+    .searchBar {
+        font-size: 16px; 
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .searchContainer {
+        max-width: 500px; 
+    }
+    .searchBar {
+        padding: 4px; 
+        font-size: 18px; 
+    }
 }
