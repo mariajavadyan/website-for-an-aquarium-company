@@ -1,4 +1,3 @@
-//  import imgSrc from "@/static/images/aquarium8.png";
 import imgSrc from "@/static/images/999.gif";
 
 import styles from "./Home.module.css";
@@ -18,7 +17,6 @@ function createGame() {
   gameElement.classList.add(styles["game"]);
 
   titleElement.textContent = "AQUA DREAM SPACE";
-  // gameElement.textContent = "Game";
 
   gameDivElement.appendChild(imgElement);
   gameDivElement.appendChild(gameElement);
