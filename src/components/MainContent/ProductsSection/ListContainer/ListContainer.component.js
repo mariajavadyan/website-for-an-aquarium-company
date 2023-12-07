@@ -1,4 +1,4 @@
-import displayProducts from "@/helpers/displayProducts";
+import displayProducts from "@/services/displayProducts";
 import Product from "../Product/Product.component";
 import styles from "./ListContainer.module.css";
 
@@ -6,14 +6,18 @@ function CreateListContainer() {
   const productListContainer = document.createElement("div");
   productListContainer.id = "productList";
   productListContainer.classList.add(styles["product-container"]);
-  
-  let productId = document.getElementById('Products');
-  productId.addEventListener("click", function () {
-    const productsToDisplay = displayProducts();
 
-    productsToDisplay.forEach((product) => {
-      productListContainer.appendChild(Product(product));
-    });
+  let productId = document.getElementById("Products");
+  productId.addEventListener("click", function () {
+    displayProducts()
+      .then((products) => {
+        for (const product of products) {
+          productListContainer.appendChild(Product(product));
+        }
+      })
+      .catch((error) => {
+        console.error("Error loading images: ", error);
+      });
   });
 
   return productListContainer;

@@ -1,0 +1,38 @@
+export const formFields = [
+  {
+    id: "name",
+    tag: "input",
+    type: "text",
+    name: "name",
+    required: true,
+    labelText: "Name",
+    placeholder: "Ann",
+  },
+  {
+    id: "phone",
+    type: "tel",
+    tag: "input",
+    name: "phone",
+    required: true,
+    labelText: "Phone",
+    pattern: "+374[0-9]{8}",
+    placeholder: "+37498991133",
+  },
+  {
+    id: "email",
+    tag: "input",
+    type: "email",
+    name: "email",
+    required: true,
+    labelText: "Email",
+    placeholder: "smith@gmail.com",
+  },
+  {
+    id: "message",
+    required: true,
+    tag: "textarea",
+    name: "message",
+    labelText: "Message",
+    placeholder: "Hello, ...",
+  },
+];
