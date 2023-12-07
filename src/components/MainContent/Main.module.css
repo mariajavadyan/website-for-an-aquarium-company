@@ -42,8 +42,8 @@ section {
     margin-top: -120px;
 } */ 
 
-
-.hide-content {
+/**/
+/* .hide-content {
     display: none;
 }
 
@@ -127,4 +127,180 @@ section {
         max-width: 400px;
         margin-top: 20px;
     }
+} */
+
+/**/
+/* .hide-content {
+    display: none;
 }
+
+section {
+    text-align: center;
+}
+
+.home h2,
+.products h2 {
+    text-align: center;
+    color: #000769;
+    font-size: 40px;
+}
+
+.about h2 {
+    text-align: left;
+    color: rgb(0, 0, 84);
+    font-size: 5vw; 
+}
+
+.about p {
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.5em; 
+    max-width: 90%; 
+    margin: 0 auto; 
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+    color: #000769;
+}
+
+.about img {
+    width: 80%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+
+@media (max-width: 768px) {
+    .home h2,
+    .products h2,
+    .about h2 {
+        font-size: 30px;
+        margin-left: 20px;
+        margin-top: 40px;
+    }
+
+    .about p,
+    .about img {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home h2,
+    .products h2,
+    .about h2 {
+        font-size: 10vw; 
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .about p {
+        font-size: 1em;
+        max-width: 100%;
+    }
+
+    .about img {
+        width: 100%; 
+    }
+} */
+
+
+.hide-content {
+    display: none;
+}
+
+.hide-content {
+    display: none;
+}
+
+section {
+    text-align: center;
+}
+
+.home h2,
+.products h2 {
+    text-align: center;
+    color: #000769;
+    font-size: 40px;
+}
+
+
+.about h2 {
+    text-align: center; 
+    color: rgb(0, 0, 84);
+    font-size: 4vw; 
+    width: 100%; 
+    margin: 0 auto; 
+    clear: both; 
+    margin-top: 10px;
+}
+
+.about p {
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.5em; 
+    max-width: 40%; 
+    margin-right: 10px; 
+    margin-left: 110px;
+    margin-bottom: 50px;
+    margin-top: 110px;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+    color: #000769;
+    float: left; 
+}
+
+.about img {
+    width: 40%; 
+    max-width: 800px; 
+    float: right;
+    margin-left: 20px; 
+    margin-right: 70px;
+    margin-bottom: 30px;
+    margin-top:50px;
+}
+
+
+.about::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .home h2,
+    .products h2,
+    .about h2 {
+        font-size: 30px;
+        margin-left: 20px;
+        margin-top: 40px;
+    }
+
+    .about h2,
+    .about p,
+    .about img {
+        float: none; 
+        width: auto; 
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 480px) {
+    .home h2,
+    .products h2,
+    .about h2 {
+        font-size: 10vw; 
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .about p {
+        font-size: 1em; 
+        max-width: 100%;
+    }
+
+    .about img {
+        width: 100%; 
+    }
+}
+
