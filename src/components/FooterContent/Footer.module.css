@@ -1,65 +1,33 @@
-/* .container {
-    color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #000769;
-    border: 1px solid #261d5e;
-    padding: 43px 291px;
-    margin-bottom: 17px;
-    position: relative;
-    bottom: 0;
-    width: 70%;
-}
-
-.mt-17 {
-    margin-top: 17px;
-}
-
-.mb-0 {
-    margin-bottom: 0;
-}
-
-.container-elem {
-    font-size: 15px;
-    text-align: left;
-} */
-
 .container {
-    color: #ffffff;
+    color: #FFFFFF;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #000769;
-    border: 1px solid #261d5e;
+    border: 1px solid #261D5E;
     padding: 20px;
     margin-bottom: 17px;
     bottom: 0;
 }
-
 .mt-17 {
     margin-top: 17px;
 }
-
 .mb-0 {
     margin-bottom: 0;
 }
-
 .container-elem {
     font-size: 15px;
     text-align: left;
-    flex: 1 1 auto; /* Allow elements to grow and shrink */
-    margin: 50px; /* Add some space around elements */
+    flex: 1 1 auto; 
+    margin: 50px; 
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
-        padding: 10px; /* Reduce padding on smaller screens */
+        padding: 10px; 
     }
-
     .container-elem {
-        font-size: 15px; /* Reduce font size on smaller screens */
+        font-size: 15px; 
     }
 }
 @media (max-width: 600px) {
@@ -70,14 +38,12 @@
         flex-direction: column;
     }
 }
-
 @media (max-width: 480px) {
     .container {
-        flex-direction: column; /* Stack elements vertically on very small screens */
+        flex-direction: column; 
     }
-
     .container-elem {
-        text-align: center; /* Center-align text on very small screens */
-        margin: 5px 0; /* Adjust margin for stacked layout */
+        text-align: center; 
+        margin: 5px 0; 
     }
 }

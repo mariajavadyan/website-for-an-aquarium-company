@@ -1,47 +1,10 @@
-/* .hide-content {
+main {
+    min-height: 38vh;
+}
+
+.hide-content {
     display: none;
 }
-
-section {
-    /* padding: 20px; */
-    /* text-align: center;
-}
-
-.home h2,
-.products h2 {
-    text-align:center;
-    color: #000769;
-    font-size: 40px;
-}
-
-.about h2{
-    text-align: left;
-    color: rgb(0, 0, 84);
-    font-size: 40px;
-    margin-left: 200px;
-    margin-top: 80px;
-}
-
-.about p {
-    width: 30%; 
-    box-sizing: border-box;
-    text-align: left;
-    float: left;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 2; 
-    color: #000769;
-    margin-left: 200px;
-    margin-top: 100px; 
-}
-
-.about img {
-    width: 100%; 
-    max-width: 800px; 
-    margin-top: -120px;
-} */ 
-
 
 .hide-content {
     display: none;
@@ -58,34 +21,49 @@ section {
     font-size: 40px;
 }
 
+
 .about h2 {
-    text-align: left;
+    text-align: center; 
     color: rgb(0, 0, 84);
-    font-size: 40px;
-    margin-left: 200px;
-    margin-top: 80px;
+    font-size: 4vw; 
+    width: 100%; 
+    margin: 0 auto; 
+    clear: both; 
+    margin-top: 10px;
 }
 
 .about p {
-    width: 30%;
     box-sizing: border-box;
     text-align: left;
-    float: left;
-    font-size: 18px;
+    font-size: 1.5em; 
+    max-width: 40%; 
+    margin-right: 10px; 
+    margin-left: 110px;
+    margin-bottom: 50px;
+    margin-top: 110px;
     letter-spacing: 1px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 2;
     color: #000769;
-    margin-left: 200px;
-    margin-top: 100px;
+    float: left; 
 }
 
 .about img {
-    width: 100%;
-    max-width: 800px;
-    margin-top: -120px;
+    width: 40%; 
+    max-width: 800px; 
+    float: right;
+    margin-left: 20px; 
+    margin-right: 70px;
+    margin-bottom: 30px;
+    margin-top:50px;
 }
 
+
+.about::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 @media (max-width: 768px) {
     .home h2,
@@ -96,15 +74,12 @@ section {
         margin-top: 40px;
     }
 
-    .about p {
-        width: 50%;
-        margin-left: 20px;
-        margin-top: 50px;
-    }
-
+    .about h2,
+    .about p,
     .about img {
-        max-width: 600px;
-        margin-top: -60px;
+        float: none; 
+        width: auto; 
+        margin: 0 auto; 
     }
 }
 
@@ -112,19 +87,18 @@ section {
     .home h2,
     .products h2,
     .about h2 {
-        font-size: 20px;
+        font-size: 10vw; 
         margin-left: 10px;
         margin-top: 20px;
     }
 
     .about p {
-        width: 70%;
-        margin-left: 10px;
-        margin-top: 25px;
+        font-size: 1em; 
+        max-width: 100%;
     }
 
     .about img {
-        max-width: 400px;
-        margin-top: -30px;
+        width: 100%; 
     }
 }
+

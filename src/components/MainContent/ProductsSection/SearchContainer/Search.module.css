@@ -1,34 +1,25 @@
-/* .searchContainer {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #000769;
-    max-width: 300px; 
-    margin: 0 auto;
-}
-
-.searchBar {
-    display: inline-block;
-    padding: 2px; 
-    font-size: 12px; 
-    max-width: 100%; 
-    width: 100%; 
-} */
-
-
 .searchContainer {
     text-align: center;
     margin-bottom: 20px;
     color: #000769;
-    max-width: 300px; 
+    max-width: 300px;
     margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #f8f8f8;
+    padding: 10px; 
 }
 
 .searchBar {
     display: inline-block;
-    padding: 2px; 
-    font-size: 12px; 
-    max-width: 100%; 
-    width: 100%; 
+    padding: 8px 12px; 
+    font-size: 16px; 
+    max-width: 100%;
+    height: 40px;
+    width: calc(100% - 24px); 
+    border: 2px solid #000769;
+    border-radius: 5px; 
+    box-sizing: border-box; 
 }
 
 

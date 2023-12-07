@@ -1,6 +1,7 @@
 import displayProducts from "@/services/displayProducts";
 import Product from "../Product/Product.component";
 import searchProducts from "@/services/searchProducts";
+import debounce from "../../../../helpers/debounce";
 import styles from "./Search.module.css";
 
 function CreateSearch() {
@@ -16,27 +17,33 @@ function CreateSearch() {
   searchBar.type = "text";
   searchBar.id = "searchBar";
   searchBar.classList.add(styles["searchBar"]);
-  searchBar.oninput = function () {
+
+  const debouncedSearch = debounce(function () {
     let productListContainer = document.querySelector("#productList");
     productListContainer.innerHTML = "";
 
-    displayProducts(searchProducts()).then(products => {
-      const searchInput = document.getElementById("searchBar").value.toLowerCase();
-      const filteredProducts = products.filter((product) => {
-        return (
-          product.name.toLowerCase().includes(searchInput) ||
-          product.description.toLowerCase().includes(searchInput)
-        );
-      });
+    displayProducts(searchProducts())
+      .then((products) => {
+        const searchInput = document
+          .getElementById("searchBar")
+          .value.toLowerCase();
+        const filteredProducts = products.filter((product) => {
+          return (
+            product.name.toLowerCase().includes(searchInput) ||
+            product.description.toLowerCase().includes(searchInput)
+          );
+        });
 
-      filteredProducts.forEach(product => {
-        productListContainer.appendChild(Product(product));
+        filteredProducts.forEach((product) => {
+          productListContainer.appendChild(Product(product));
+        });
+      })
+      .catch((error) => {
+        console.error("Error loading images: ", error);
       });
-    })
-    .catch((error) => {
-      console.error('Ошибка при загрузке изображения:', error);
-    });
-  };
+  }, 500);
+
+  searchBar.oninput = debouncedSearch;
 
   searchContainer.appendChild(label);
   searchContainer.appendChild(searchBar);
