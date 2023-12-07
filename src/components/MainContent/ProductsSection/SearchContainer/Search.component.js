@@ -1,7 +1,7 @@
 import displayProducts from "@/services/displayProducts";
 import Product from "../Product/Product.component";
 import searchProducts from "@/services/searchProducts";
-import Debounce from "./Debounce.component";
+import debounce from "../../../../helpers/debounce";
 import styles from "./Search.module.css";
 
 // function debounce(func, wait) {
@@ -76,7 +76,7 @@ function CreateSearch() {
   searchBar.id = "searchBar";
   searchBar.classList.add(styles["searchBar"]);
 
-  const debouncedSearch = Debounce(function () {
+  const debouncedSearch = debounce(function () {
     let productListContainer = document.querySelector("#productList");
     productListContainer.innerHTML = "";
 

@@ -203,6 +203,9 @@ section {
     }
 } */
 
+main {
+    min-height: 38vh;
+}
 
 .hide-content {
     display: none;

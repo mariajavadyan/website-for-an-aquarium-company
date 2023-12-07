@@ -1,4 +1,4 @@
-function Debounce(func, wait) {
+function debounce(func, wait) {
   let timeout;
 
   return function executedFunction(...args) {
@@ -12,4 +12,4 @@ function Debounce(func, wait) {
   };
 }
 
-export default Debounce;
+export default debounce;
